@@ -78,5 +78,18 @@ namespace SOFiaT
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void btnlogin_Click(object sender, EventArgs e)
+        {
+            DBManager c = new DBManager();
+            string usu = txtuser.Text;
+            string pass = txtpass.Text;
+
+            c.startseccion(usu, pass);
+            if (c.valor == "si")
+            {
+
+            }
+        }
     }
 }

@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login_frm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtuser = new System.Windows.Forms.TextBox();
             this.txtpass = new System.Windows.Forms.TextBox();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.btnlogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -66,6 +66,16 @@
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
             // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape2.Enabled = false;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 307;
+            this.lineShape2.X2 = 714;
+            this.lineShape2.Y1 = 176;
+            this.lineShape2.Y2 = 176;
+            // 
             // lineShape1
             // 
             this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
@@ -78,7 +88,7 @@
             // 
             // txtuser
             // 
-            this.txtuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtuser.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtuser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtuser.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuser.ForeColor = System.Drawing.Color.DimGray;
@@ -92,7 +102,7 @@
             // 
             // txtpass
             // 
-            this.txtpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtpass.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpass.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpass.ForeColor = System.Drawing.Color.DimGray;
@@ -103,16 +113,6 @@
             this.txtpass.Text = "Contraseña";
             this.txtpass.Enter += new System.EventHandler(this.txtpass_Enter);
             this.txtpass.Leave += new System.EventHandler(this.txtpass_Leave);
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape2.Enabled = false;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 307;
-            this.lineShape2.X2 = 714;
-            this.lineShape2.Y1 = 176;
-            this.lineShape2.Y2 = 176;
             // 
             // btnlogin
             // 
@@ -129,6 +129,7 @@
             this.btnlogin.TabIndex = 3;
             this.btnlogin.Text = "Acceder";
             this.btnlogin.UseVisualStyleBackColor = false;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // label1
             // 
@@ -189,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(780, 330);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnmin);
@@ -201,6 +202,7 @@
             this.Controls.Add(this.txtuser);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.shapeContainer1);
+            this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "login_frm";
             this.Opacity = 0.9D;
