@@ -81,6 +81,27 @@ namespace SOFiaT
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            startseccion();
+        }
+
+        private void txtpass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (e.KeyChar.)
+            //{
+
+            //}
+        }
+
+        private void txtpass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                startseccion();
+
+            }
+        }
+        private void startseccion()
+        {
             DBManager c = new DBManager();
             string usu = txtuser.Text;
             string pass = txtpass.Text;
@@ -88,6 +109,12 @@ namespace SOFiaT
             c.startseccion(usu, pass);
             if (c.valor == "si")
             {
+                string query = "insert into [actualuser]([user]) values ('" + usu + "')";
+                c.command3(query);
+                txtpass.Clear();
+                this.Hide();
+                homeform frm = new homeform();
+                frm.Show();
 
             }
         }
