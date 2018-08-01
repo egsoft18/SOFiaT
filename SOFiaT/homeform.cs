@@ -77,5 +77,23 @@ namespace SOFiaT
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void openfrm(object ofrm)
+        {
+            if (container.Controls.Count > 0)
+                this.container.Controls.RemoveAt(0);
+            Form frm = ofrm as Form;
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            this.container.Controls.Add(frm);
+            this.container.Tag = frm;
+            frm.Show();
+        }
+
+        private void btnproducts_Click(object sender, EventArgs e)
+        {
+            openfrm(new products());
+
+        }
     }
 }

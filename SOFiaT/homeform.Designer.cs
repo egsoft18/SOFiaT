@@ -256,6 +256,7 @@
             this.btnproducts.Text = "Productos";
             this.btnproducts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnproducts.UseVisualStyleBackColor = true;
+            this.btnproducts.Click += new System.EventHandler(this.btnproducts_Click);
             // 
             // btninvoicerec
             // 
