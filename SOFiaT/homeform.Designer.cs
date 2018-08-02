@@ -488,7 +488,6 @@
         private System.Windows.Forms.Panel verticalmenu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnhide;
-        private System.Windows.Forms.Panel container;
         private System.Windows.Forms.PictureBox btnclose;
         private System.Windows.Forms.PictureBox btnmax;
         private System.Windows.Forms.PictureBox btnmin;
@@ -515,5 +514,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtprivileges;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Panel container;
     }
 }

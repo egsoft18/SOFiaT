@@ -51,6 +51,7 @@
             this.btnaddproduct.TabIndex = 0;
             this.btnaddproduct.Text = "Agregar Producto";
             this.btnaddproduct.UseVisualStyleBackColor = false;
+            this.btnaddproduct.Click += new System.EventHandler(this.btnaddproduct_Click);
             // 
             // btnclose
             // 
@@ -81,6 +82,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(529, 228);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // label1
             // 
@@ -108,6 +110,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "products";
             this.Text = "products";
+            this.Activated += new System.EventHandler(this.products_Activated);
             this.Load += new System.EventHandler(this.products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -78,7 +78,7 @@ namespace SOFiaT
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void openfrm(object ofrm)
+        public void openfrm(object ofrm)
         {
             if (container.Controls.Count > 0)
                 this.container.Controls.RemoveAt(0);

@@ -338,5 +338,7 @@ namespace SOFiaT
                 MessageBox.Show("No se pudo validar; " + ex.Message);
             }
         }
+
+        
     }
 }
