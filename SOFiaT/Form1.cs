@@ -102,21 +102,24 @@ namespace SOFiaT
         }
         private void startseccion()
         {
-            DBManager c = new DBManager();
-            string usu = txtuser.Text;
-            string pass = txtpass.Text;
+            //DBManager c = new DBManager();
+            //string usu = txtuser.Text;
+            //string pass = txtpass.Text;
 
-            c.startseccion(usu, pass);
-            if (c.valor == "si")
-            {
-                string query = "insert into [actualuser]([user]) values ('" + usu + "')";
-                c.command3(query);
-                txtpass.Clear();
-                this.Hide();
-                homeform frm = new homeform();
-                frm.Show();
+            //c.startseccion(usu, pass);
+            //if (c.valor == "si")
+            //{
+            //    string query = "insert into [actualuser]([user]) values ('" + usu + "')";
+            //    c.command3(query);
+            //    txtpass.Clear();
+            //    this.Hide();
+            //    homeform frm = new homeform();
+            //    frm.Show();
 
-            }
+            //}
+            this.Hide();
+            homeform frm = new homeform();
+            frm.Show();
         }
     }
 }

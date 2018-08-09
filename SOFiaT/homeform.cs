@@ -95,5 +95,10 @@ namespace SOFiaT
             openfrm(new products());
 
         }
+
+        private void btninvoicerec_Click(object sender, EventArgs e)
+        {
+            openfrm(new entryinvoice());
+        }
     }
 }

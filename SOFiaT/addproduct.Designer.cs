@@ -36,18 +36,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtcode = new System.Windows.Forms.TextBox();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtname = new System.Windows.Forms.TextBox();
             this.txtdescription = new System.Windows.Forms.TextBox();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtcost = new System.Windows.Forms.TextBox();
             this.txtsaleprice = new System.Windows.Forms.TextBox();
             this.txtsupplier = new System.Windows.Forms.TextBox();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.btnsaveprod = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -145,6 +145,51 @@
             this.shapeContainer1.TabIndex = 7;
             this.shapeContainer1.TabStop = false;
             // 
+            // lineShape6
+            // 
+            this.lineShape6.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape6.Name = "lineShape6";
+            this.lineShape6.X1 = 555;
+            this.lineShape6.X2 = 708;
+            this.lineShape6.Y1 = 196;
+            this.lineShape6.Y2 = 196;
+            // 
+            // lineShape5
+            // 
+            this.lineShape5.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape5.Name = "lineShape5";
+            this.lineShape5.X1 = 387;
+            this.lineShape5.X2 = 501;
+            this.lineShape5.Y1 = 198;
+            this.lineShape5.Y2 = 198;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 160;
+            this.lineShape4.X2 = 293;
+            this.lineShape4.Y1 = 197;
+            this.lineShape4.Y2 = 197;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 222;
+            this.lineShape3.X2 = 557;
+            this.lineShape3.Y1 = 155;
+            this.lineShape3.Y2 = 155;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 217;
+            this.lineShape2.X2 = 552;
+            this.lineShape2.Y1 = 113;
+            this.lineShape2.Y2 = 113;
+            // 
             // lineShape1
             // 
             this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
@@ -163,15 +208,6 @@
             this.txtcode.Size = new System.Drawing.Size(333, 13);
             this.txtcode.TabIndex = 8;
             // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 217;
-            this.lineShape2.X2 = 552;
-            this.lineShape2.Y1 = 113;
-            this.lineShape2.Y2 = 113;
-            // 
             // txtname
             // 
             this.txtname.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -189,15 +225,6 @@
             this.txtdescription.Name = "txtdescription";
             this.txtdescription.Size = new System.Drawing.Size(333, 13);
             this.txtdescription.TabIndex = 10;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 222;
-            this.lineShape3.X2 = 557;
-            this.lineShape3.Y1 = 155;
-            this.lineShape3.Y2 = 155;
             // 
             // txtcost
             // 
@@ -227,33 +254,6 @@
             this.txtsupplier.Name = "txtsupplier";
             this.txtsupplier.Size = new System.Drawing.Size(156, 13);
             this.txtsupplier.TabIndex = 13;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 160;
-            this.lineShape4.X2 = 293;
-            this.lineShape4.Y1 = 197;
-            this.lineShape4.Y2 = 197;
-            // 
-            // lineShape5
-            // 
-            this.lineShape5.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape5.Name = "lineShape5";
-            this.lineShape5.X1 = 387;
-            this.lineShape5.X2 = 501;
-            this.lineShape5.Y1 = 198;
-            this.lineShape5.Y2 = 198;
-            // 
-            // lineShape6
-            // 
-            this.lineShape6.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape6.Name = "lineShape6";
-            this.lineShape6.X1 = 555;
-            this.lineShape6.X2 = 708;
-            this.lineShape6.Y1 = 196;
-            this.lineShape6.Y2 = 196;
             // 
             // btnsaveprod
             // 
@@ -329,18 +329,18 @@
         private System.Windows.Forms.Label label7;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private System.Windows.Forms.TextBox txtcode;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape6;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.TextBox txtdescription;
-        private System.Windows.Forms.TextBox txtcost;
-        private System.Windows.Forms.TextBox txtsaleprice;
-        private System.Windows.Forms.TextBox txtsupplier;
-        private System.Windows.Forms.Button btnsaveprod;
         private System.Windows.Forms.Button btncancel;
+        public System.Windows.Forms.TextBox txtcode;
+        public System.Windows.Forms.TextBox txtname;
+        public System.Windows.Forms.TextBox txtdescription;
+        public System.Windows.Forms.TextBox txtcost;
+        public System.Windows.Forms.TextBox txtsaleprice;
+        public System.Windows.Forms.TextBox txtsupplier;
+        public System.Windows.Forms.Button btnsaveprod;
     }
 }
