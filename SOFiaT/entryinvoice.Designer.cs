@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -55,12 +55,15 @@
             this.txtcodeprod = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtbillcode = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.rbtncode = new System.Windows.Forms.RadioButton();
+            this.rbtncodeprod = new System.Windows.Forms.RadioButton();
+            this.rbtnprod = new System.Windows.Forms.RadioButton();
+            this.rbtndate = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
+            this.dtpdatese = new System.Windows.Forms.DateTimePicker();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.txtlastcode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -75,14 +78,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(12, 230);
             this.dgv.Name = "dgv";
@@ -108,9 +111,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtlastcode);
+            this.groupBox1.Controls.Add(this.btndelete);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txttotalcost);
             this.groupBox1.Controls.Add(this.label11);
@@ -142,9 +144,12 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Entrada de Factura";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(208, 98);
             this.label12.Name = "label12";
@@ -154,6 +159,8 @@
             // 
             // txttotalcost
             // 
+            this.txttotalcost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txttotalcost.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txttotalcost.Enabled = false;
             this.txttotalcost.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,6 +172,8 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(9, 98);
             this.label11.Name = "label11";
@@ -174,6 +183,8 @@
             // 
             // txtcost
             // 
+            this.txtcost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtcost.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtcost.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtcost.Location = new System.Drawing.Point(58, 95);
@@ -185,6 +196,8 @@
             // 
             // cbproducts
             // 
+            this.cbproducts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbproducts.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbproducts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbproducts.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -199,6 +212,8 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(437, 46);
             this.label9.Name = "label9";
@@ -208,6 +223,8 @@
             // 
             // dtpdate
             // 
+            this.dtpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpdate.CalendarForeColor = System.Drawing.Color.DodgerBlue;
             this.dtpdate.CalendarTitleForeColor = System.Drawing.Color.DodgerBlue;
             this.dtpdate.CustomFormat = "MM/dd/yyyy";
@@ -219,18 +236,22 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(994, 49);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(994, 90);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 30);
             this.button2.TabIndex = 16;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // btnaction
             // 
+            this.btnaction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnaction.Location = new System.Drawing.Point(994, 20);
             this.btnaction.Name = "btnaction";
-            this.btnaction.Size = new System.Drawing.Size(75, 23);
+            this.btnaction.Size = new System.Drawing.Size(75, 30);
             this.btnaction.TabIndex = 15;
             this.btnaction.Text = "button1";
             this.btnaction.UseVisualStyleBackColor = true;
@@ -238,6 +259,8 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(674, 20);
             this.label8.Name = "label8";
@@ -248,17 +271,21 @@
             // txtcomentary
             // 
             this.txtcomentary.AcceptsTab = true;
+            this.txtcomentary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtcomentary.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtcomentary.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtcomentary.Location = new System.Drawing.Point(755, 17);
             this.txtcomentary.Multiline = true;
             this.txtcomentary.Name = "txtcomentary";
             this.txtcomentary.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtcomentary.Size = new System.Drawing.Size(208, 66);
+            this.txtcomentary.Size = new System.Drawing.Size(208, 105);
             this.txtcomentary.TabIndex = 13;
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(437, 69);
             this.label7.Name = "label7";
@@ -268,6 +295,8 @@
             // 
             // txtsupplier
             // 
+            this.txtsupplier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsupplier.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtsupplier.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtsupplier.Location = new System.Drawing.Point(499, 66);
@@ -277,6 +306,8 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(437, 20);
             this.label6.Name = "label6";
@@ -286,6 +317,8 @@
             // 
             // txtref
             // 
+            this.txtref.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtref.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtref.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtref.Location = new System.Drawing.Point(512, 17);
@@ -295,6 +328,8 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(143, 72);
             this.label5.Name = "label5";
@@ -304,6 +339,8 @@
             // 
             // txtunid
             // 
+            this.txtunid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtunid.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtunid.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtunid.Location = new System.Drawing.Point(196, 69);
@@ -313,6 +350,8 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(7, 72);
             this.label4.Name = "label4";
@@ -322,6 +361,8 @@
             // 
             // txtqty
             // 
+            this.txtqty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtqty.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtqty.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtqty.Location = new System.Drawing.Point(71, 69);
@@ -333,6 +374,8 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 46);
             this.label3.Name = "label3";
@@ -342,6 +385,8 @@
             // 
             // txtcodeprod
             // 
+            this.txtcodeprod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtcodeprod.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtcodeprod.Enabled = false;
             this.txtcodeprod.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -352,6 +397,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(7, 20);
             this.label2.Name = "label2";
@@ -361,6 +408,8 @@
             // 
             // txtbillcode
             // 
+            this.txtbillcode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbillcode.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtbillcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbillcode.Enabled = false;
@@ -370,73 +419,78 @@
             this.txtbillcode.Size = new System.Drawing.Size(70, 20);
             this.txtbillcode.TabIndex = 0;
             // 
-            // textBox9
+            // txtsearch
             // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox9.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.textBox9.Location = new System.Drawing.Point(290, 204);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(440, 20);
-            this.textBox9.TabIndex = 19;
+            this.txtsearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtsearch.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.txtsearch.Location = new System.Drawing.Point(290, 204);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(440, 20);
+            this.txtsearch.TabIndex = 19;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
-            // radioButton1
+            // rbtncode
             // 
-            this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtncode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(13, 205);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 19);
-            this.radioButton1.TabIndex = 20;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Code";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtncode.AutoSize = true;
+            this.rbtncode.Location = new System.Drawing.Point(13, 205);
+            this.rbtncode.Name = "rbtncode";
+            this.rbtncode.Size = new System.Drawing.Size(47, 19);
+            this.rbtncode.TabIndex = 20;
+            this.rbtncode.TabStop = true;
+            this.rbtncode.Text = "Code";
+            this.rbtncode.UseVisualStyleBackColor = true;
+            this.rbtncode.CheckedChanged += new System.EventHandler(this.rbtncode_CheckedChanged);
             // 
-            // radioButton2
+            // rbtncodeprod
             // 
-            this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtncodeprod.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(66, 205);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(86, 19);
-            this.radioButton2.TabIndex = 21;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Code Producto";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtncodeprod.AutoSize = true;
+            this.rbtncodeprod.Location = new System.Drawing.Point(66, 205);
+            this.rbtncodeprod.Name = "rbtncodeprod";
+            this.rbtncodeprod.Size = new System.Drawing.Size(86, 19);
+            this.rbtncodeprod.TabIndex = 21;
+            this.rbtncodeprod.TabStop = true;
+            this.rbtncodeprod.Text = "Code Producto";
+            this.rbtncodeprod.UseVisualStyleBackColor = true;
+            this.rbtncodeprod.CheckedChanged += new System.EventHandler(this.rbtncodeprod_CheckedChanged);
             // 
-            // radioButton3
+            // rbtnprod
             // 
-            this.radioButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtnprod.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(159, 205);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(61, 19);
-            this.radioButton3.TabIndex = 22;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Producto";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtnprod.AutoSize = true;
+            this.rbtnprod.Location = new System.Drawing.Point(159, 205);
+            this.rbtnprod.Name = "rbtnprod";
+            this.rbtnprod.Size = new System.Drawing.Size(61, 19);
+            this.rbtnprod.TabIndex = 22;
+            this.rbtnprod.TabStop = true;
+            this.rbtnprod.Text = "Producto";
+            this.rbtnprod.UseVisualStyleBackColor = true;
+            this.rbtnprod.CheckedChanged += new System.EventHandler(this.rbtnprod_CheckedChanged);
             // 
-            // radioButton4
+            // rbtndate
             // 
-            this.radioButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtndate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(226, 205);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(51, 19);
-            this.radioButton4.TabIndex = 23;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Fecha";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbtndate.AutoSize = true;
+            this.rbtndate.Location = new System.Drawing.Point(226, 205);
+            this.rbtndate.Name = "rbtndate";
+            this.rbtndate.Size = new System.Drawing.Size(51, 19);
+            this.rbtndate.TabIndex = 23;
+            this.rbtndate.TabStop = true;
+            this.rbtndate.Text = "Fecha";
+            this.rbtndate.UseVisualStyleBackColor = true;
+            this.rbtndate.CheckedChanged += new System.EventHandler(this.rbtndate_CheckedChanged);
             // 
             // label10
             // 
@@ -450,18 +504,53 @@
             this.label10.Text = "X";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
+            // dtpdatese
+            // 
+            this.dtpdatese.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtpdatese.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
+            this.dtpdatese.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtpdatese.CustomFormat = "MM/dd/yyyy";
+            this.dtpdatese.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpdatese.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpdatese.Location = new System.Drawing.Point(290, 204);
+            this.dtpdatese.Name = "dtpdatese";
+            this.dtpdatese.Size = new System.Drawing.Size(200, 20);
+            this.dtpdatese.TabIndex = 25;
+            this.dtpdatese.ValueChanged += new System.EventHandler(this.dtpdatese_ValueChanged);
+            // 
+            // btndelete
+            // 
+            this.btndelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btndelete.Location = new System.Drawing.Point(994, 53);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(75, 30);
+            this.btndelete.TabIndex = 24;
+            this.btndelete.Text = "Borrar";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            // 
+            // txtlastcode
+            // 
+            this.txtlastcode.Location = new System.Drawing.Point(677, 44);
+            this.txtlastcode.Name = "txtlastcode";
+            this.txtlastcode.Size = new System.Drawing.Size(40, 20);
+            this.txtlastcode.TabIndex = 25;
+            this.txtlastcode.Visible = false;
+            // 
             // entryinvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1100, 620);
+            this.Controls.Add(this.dtpdatese);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.rbtndate);
+            this.Controls.Add(this.rbtnprod);
+            this.Controls.Add(this.rbtncodeprod);
+            this.Controls.Add(this.rbtncode);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv);
@@ -471,6 +560,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "entryinvoice";
             this.Text = "entryinvoice";
+            this.Activated += new System.EventHandler(this.entryinvoice_Activated);
             this.Load += new System.EventHandler(this.entryinvoice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -503,16 +593,19 @@
         private System.Windows.Forms.TextBox txtcodeprod;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtbillcode;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.RadioButton rbtncode;
+        private System.Windows.Forms.RadioButton rbtncodeprod;
+        private System.Windows.Forms.RadioButton rbtnprod;
+        private System.Windows.Forms.RadioButton rbtndate;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbproducts;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtcost;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txttotalcost;
+        private System.Windows.Forms.DateTimePicker dtpdatese;
+        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.TextBox txtlastcode;
     }
 }
