@@ -54,6 +54,8 @@
             this.rbtnsupplier = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtsearch = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtunid = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -252,7 +254,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(25, 159);
+            this.label7.Location = new System.Drawing.Point(6, 161);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 14);
             this.label7.TabIndex = 15;
@@ -263,15 +265,17 @@
             this.txtsupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsupplier.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtsupplier.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtsupplier.Location = new System.Drawing.Point(90, 156);
+            this.txtsupplier.Location = new System.Drawing.Point(68, 156);
             this.txtsupplier.Name = "txtsupplier";
-            this.txtsupplier.Size = new System.Drawing.Size(298, 23);
+            this.txtsupplier.Size = new System.Drawing.Size(176, 23);
             this.txtsupplier.TabIndex = 14;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.txtunid);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btncancel);
             this.groupBox1.Controls.Add(this.btnact);
             this.groupBox1.Controls.Add(this.label2);
@@ -386,6 +390,28 @@
             this.txtsearch.TabIndex = 24;
             this.txtsearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label8.Location = new System.Drawing.Point(250, 161);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 14);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Unidad:";
+            // 
+            // txtunid
+            // 
+            this.txtunid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtunid.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtunid.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.txtunid.Location = new System.Drawing.Point(303, 156);
+            this.txtunid.Name = "txtunid";
+            this.txtunid.Size = new System.Drawing.Size(97, 23);
+            this.txtunid.TabIndex = 19;
+            // 
             // products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,5 +462,7 @@
         private System.Windows.Forms.RadioButton rbtnsupplier;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.TextBox txtunid;
+        private System.Windows.Forms.Label label8;
     }
 }

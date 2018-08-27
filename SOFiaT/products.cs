@@ -26,7 +26,7 @@ namespace SOFiaT
 
         private void products_Load(object sender, EventArgs e)
         {
-            string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products";
+            string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, unid as Unidad, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products";
             c.load_dgv(dataGridView1, query);
             rbtncode.Checked = true;
             btnact.Text = "Agregar";
@@ -48,28 +48,18 @@ namespace SOFiaT
 
         private void products_Activated(object sender, EventArgs e)
         {
-            string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products";
+            string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, unid as Unidad, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products";
             c.load_dgv(dataGridView1, query);
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //    addproduct frm = new addproduct();
-            //    string query = "select idproduct, name, [description], cost, saleprice, supplier from [products] where idproduct = '" + dataGridView1.Rows[e.RowIndex].Cells["Code"].Value.ToString() + "'";
-            //    c.fill_txt(frm.txtcode, query, "idproduct");
-            //    frm.TopLevel = false;
-            //    frm.Dock = DockStyle.Fill;
-            //    this.Controls.Add(frm);
-            //    this.Tag = frm;
-            //    frm.BringToFront();
-            //    frm.Show();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //addproduct frm = new addproduct();
             try {
-                string query = "select idproduct, name, [description], cost, saleprice, supplier from [products] where idproduct = '" + dataGridView1.Rows[e.RowIndex].Cells["Code"].Value.ToString() + "'";
+                string query = "select idproduct, name, [description], cost, saleprice, supplier, unid from [products] where idproduct = '" + dataGridView1.Rows[e.RowIndex].Cells["Code"].Value.ToString() + "'";
                 c.fill_txt(txtcode, query, "idproduct");
                 txtcode.Enabled = false;
                 btnact.Text = "Actualizar";
@@ -78,6 +68,7 @@ namespace SOFiaT
                 c.fill_txt(txtcost, query, "cost");
                 c.fill_txt(txtsaleprice, query, "saleprice");
                 c.fill_txt(txtsupplier, query, "supplier");
+                c.fill_txt(txtunid, query, "unid");
                 //frm.TopLevel = false;
                 //frm.Dock = DockStyle.Fill;
                 //this.Controls.Add(frm);
@@ -101,6 +92,7 @@ namespace SOFiaT
             txtcost.Clear();
             txtsaleprice.Clear();
             txtsupplier.Clear();
+            txtunid.Clear();
         }
 
         private void btnact_Click(object sender, EventArgs e)
@@ -111,11 +103,39 @@ namespace SOFiaT
                 c.validation(query1);
                 if (c.valor == "no")
                 {
-                    string query2 = "insert into products(idproduct, name, description, cost, saleprice, supplier) values('" + txtcode.Text + "', '" + txtnameprod.Text + "', '" + txtdescprod.Text + "', '" + txtcost.Text + "', '" + txtsaleprice.Text + "', '" + txtsupplier.Text + "')";
+                    string query2 = "insert into products(idproduct, name, description, cost, saleprice, supplier, unid) values('" + txtcode.Text + "', '" + txtnameprod.Text + "', '" + txtdescprod.Text + "', '" + txtcost.Text + "', '" + txtsaleprice.Text + "', '" + txtsupplier.Text + "', '" + txtunid.Text + "')";
                     c.command(query2);
-                    c.valor = "";
+                    //c.valor = "";
+                    if (c.valor == "si")
+                    {
+                        string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, unid as Unidad, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products";
+                        c.load_dgv(dataGridView1, query);
 
-                    string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products";
+                        txtcode.Clear();
+                        txtcode.Enabled = true;
+                        btnact.Text = "Agregar";
+                        txtnameprod.Clear();
+                        txtdescprod.Clear();
+                        txtcost.Clear();
+                        txtsaleprice.Clear();
+                        txtsupplier.Clear();
+                        txtunid.Clear();
+                        c.valor = "";
+                    }
+                }
+                else if (c.valor == "si")
+                {
+                    MessageBox.Show("Ya existe un producto con este codigo", "Error al guardar");
+                    c.valor = "";
+                }
+            }
+            else if (btnact.Text == "Actualizar")
+            {
+                string query = "update [products] set name = '" + txtnameprod.Text + "', description = '" + txtdescprod.Text + "', cost = '" + txtcost.Text + "', saleprice = '" + txtsaleprice.Text + "', supplier = '" + txtsupplier.Text + "', unid = '" + txtunid.Text + "'";
+                c.command(query);
+                if (c.valor == "si")
+                {
+                    query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, unid as Unidad, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products";
                     c.load_dgv(dataGridView1, query);
 
                     txtcode.Clear();
@@ -126,29 +146,9 @@ namespace SOFiaT
                     txtcost.Clear();
                     txtsaleprice.Clear();
                     txtsupplier.Clear();
-                }
-                else if (c.valor == "si")
-                {
-                    MessageBox.Show("Ya existe un producto con este codigo", "Error al guardar");
                     c.valor = "";
                 }
-            }
-            else if (btnact.Text == "Actualizar")
-            {
-                string query = "update [products] set name = '" + txtnameprod.Text + "', description = '" + txtdescprod.Text + "', cost = '" + txtcost.Text + "', saleprice = '" + txtsaleprice.Text + "', supplier = '" + txtsupplier.Text + "'";
-                c.command(query);
 
-                query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products";
-                c.load_dgv(dataGridView1, query);
-
-                txtcode.Clear();
-                txtcode.Enabled = true;
-                btnact.Text = "Agregar";
-                txtnameprod.Clear();
-                txtdescprod.Clear();
-                txtcost.Clear();
-                txtsaleprice.Clear();
-                txtsupplier.Clear();
             }
         }
 
@@ -177,17 +177,17 @@ namespace SOFiaT
         {
             if(rbtncode.Checked == true)
             {
-                string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products where idproduct like '%" + txtsearch.Text + "%'";
+                string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, unid as Unidad, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products where idproduct like '%" + txtsearch.Text + "%'";
                 c.load_dgv(dataGridView1, query);
             }
             else if (rbtnname.Checked == true)
             {
-                string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products where name like '%" + txtsearch.Text + "%'";
+                string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, unid as Unidad, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products where name like '%" + txtsearch.Text + "%'";
                 c.load_dgv(dataGridView1, query);
             }
             else if (rbtnsupplier.Checked == true)
             {
-                string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products where supplier like '%" + txtsearch.Text + "%'";
+                string query = "Select idproduct as Code, name as Nombre, [description] as Descripcion, unid as Unidad, cost as Costo, saleprice as 'Precio de Venta', supplier as Suplidor from products where supplier like '%" + txtsearch.Text + "%'";
                 c.load_dgv(dataGridView1, query);
             }
 
