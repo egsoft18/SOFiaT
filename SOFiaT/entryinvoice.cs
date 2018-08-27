@@ -40,7 +40,7 @@ namespace SOFiaT
                 c.command3(query);
                 query = "select top 1 [idbillrec] from [billrec] order by [idbillrec] desc";
                 c.fill_txt(txtlastcode, query, "idbillrec");
-                query = "insert into [inventory]([ref], [idproduct], [entryqty], [inventorycost], [coment], [datetrans], [typetrans]) values('" + txtlastcode.Text + "', '" + txtcodeprod.Text + "', '" + txtqty.Text + "', '" + txttotalcost.Text + "', '" + txtcomentary.Text + "', '" + dtpdate.Text + "' ,'br')";
+                query = "insert into [inventory]([ref], [idproduct], [entryqty], [inventorycost], [coment], [datetrans], [typetrans], [outqty]) values('" + txtlastcode.Text + "', '" + txtcodeprod.Text + "', '" + txtqty.Text + "', '" + txttotalcost.Text + "', '" + txtcomentary.Text + "', '" + dtpdate.Text + "' ,'br', '0')";
                 c.command(query);
                 txtlastcode.Clear();
                 reload();
@@ -57,9 +57,9 @@ namespace SOFiaT
 
         private void cbproducts_TextChanged(object sender, EventArgs e)
         {
-            string query = "select idproduct, cost from products where name = '" + cbproducts.Text + "'";
-            c.fill_txt(txtcodeprod, query, "idproduct");
-            c.fill_txt(txtcost, query, "cost");
+            //string query = "select idproduct, cost from products where name = '" + cbproducts.Text + "'";
+            //c.fill_txt(txtcodeprod, query, "idproduct");
+            //c.fill_txt(txtcost, query, "cost");
         }
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -255,6 +255,19 @@ namespace SOFiaT
             {
 
             }
+        }
+
+        private void cbproducts_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string query = "select idproduct, cost, unid from products where name = '" + cbproducts.Text + "'";
+            c.fill_txt(txtcodeprod, query, "idproduct");
+            c.fill_txt(txtcost, query, "cost");
+            c.fill_txt(txtunid, query, "unid");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

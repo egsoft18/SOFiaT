@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtlastcode = new System.Windows.Forms.TextBox();
+            this.btndelete = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txttotalcost = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -62,8 +64,6 @@
             this.rbtndate = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpdatese = new System.Windows.Forms.DateTimePicker();
-            this.btndelete = new System.Windows.Forms.Button();
-            this.txtlastcode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -78,14 +78,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(12, 230);
             this.dgv.Name = "dgv";
@@ -145,6 +145,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Entrada de Factura";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtlastcode
+            // 
+            this.txtlastcode.Location = new System.Drawing.Point(677, 44);
+            this.txtlastcode.Name = "txtlastcode";
+            this.txtlastcode.Size = new System.Drawing.Size(40, 20);
+            this.txtlastcode.TabIndex = 25;
+            this.txtlastcode.Visible = false;
+            // 
+            // btndelete
+            // 
+            this.btndelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btndelete.Location = new System.Drawing.Point(994, 53);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(75, 30);
+            this.btndelete.TabIndex = 24;
+            this.btndelete.Text = "Borrar";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // label12
             // 
@@ -208,6 +228,7 @@
             this.cbproducts.Name = "cbproducts";
             this.cbproducts.Size = new System.Drawing.Size(303, 22);
             this.cbproducts.TabIndex = 19;
+            this.cbproducts.SelectedValueChanged += new System.EventHandler(this.cbproducts_SelectedValueChanged);
             this.cbproducts.TextChanged += new System.EventHandler(this.cbproducts_TextChanged);
             // 
             // label9
@@ -244,6 +265,7 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnaction
             // 
@@ -517,26 +539,6 @@
             this.dtpdatese.Size = new System.Drawing.Size(200, 20);
             this.dtpdatese.TabIndex = 25;
             this.dtpdatese.ValueChanged += new System.EventHandler(this.dtpdatese_ValueChanged);
-            // 
-            // btndelete
-            // 
-            this.btndelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btndelete.Location = new System.Drawing.Point(994, 53);
-            this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(75, 30);
-            this.btndelete.TabIndex = 24;
-            this.btndelete.Text = "Borrar";
-            this.btndelete.UseVisualStyleBackColor = true;
-            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
-            // 
-            // txtlastcode
-            // 
-            this.txtlastcode.Location = new System.Drawing.Point(677, 44);
-            this.txtlastcode.Name = "txtlastcode";
-            this.txtlastcode.Size = new System.Drawing.Size(40, 20);
-            this.txtlastcode.TabIndex = 25;
-            this.txtlastcode.Visible = false;
             // 
             // entryinvoice
             // 
