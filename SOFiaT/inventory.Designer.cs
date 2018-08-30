@@ -33,7 +33,7 @@
             this.Inventario = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rbtnidprod = new System.Windows.Forms.RadioButton();
-            this.rbtnname = new System.Windows.Forms.RadioButton();
+            this.rbtnnameprod = new System.Windows.Forms.RadioButton();
             this.txtsearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -95,16 +95,16 @@
             this.rbtnidprod.Text = "IDProducto";
             this.rbtnidprod.UseVisualStyleBackColor = true;
             // 
-            // rbtnname
+            // rbtnnameprod
             // 
-            this.rbtnname.AutoSize = true;
-            this.rbtnname.Location = new System.Drawing.Point(93, 44);
-            this.rbtnname.Name = "rbtnname";
-            this.rbtnname.Size = new System.Drawing.Size(61, 19);
-            this.rbtnname.TabIndex = 3;
-            this.rbtnname.TabStop = true;
-            this.rbtnname.Text = "Producto";
-            this.rbtnname.UseVisualStyleBackColor = true;
+            this.rbtnnameprod.AutoSize = true;
+            this.rbtnnameprod.Location = new System.Drawing.Point(93, 44);
+            this.rbtnnameprod.Name = "rbtnnameprod";
+            this.rbtnnameprod.Size = new System.Drawing.Size(61, 19);
+            this.rbtnnameprod.TabIndex = 3;
+            this.rbtnnameprod.TabStop = true;
+            this.rbtnnameprod.Text = "Producto";
+            this.rbtnnameprod.UseVisualStyleBackColor = true;
             // 
             // txtsearch
             // 
@@ -113,7 +113,7 @@
             this.txtsearch.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtsearch.Location = new System.Drawing.Point(160, 44);
             this.txtsearch.Name = "txtsearch";
-            this.txtsearch.Size = new System.Drawing.Size(331, 20);
+            this.txtsearch.Size = new System.Drawing.Size(382, 20);
             this.txtsearch.TabIndex = 4;
             this.txtsearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -124,7 +124,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(765, 339);
             this.Controls.Add(this.txtsearch);
-            this.Controls.Add(this.rbtnname);
+            this.Controls.Add(this.rbtnnameprod);
             this.Controls.Add(this.rbtnidprod);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Inventario);
@@ -146,7 +146,7 @@
         private System.Windows.Forms.Label Inventario;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.RadioButton rbtnidprod;
-        private System.Windows.Forms.RadioButton rbtnname;
+        private System.Windows.Forms.RadioButton rbtnnameprod;
         private System.Windows.Forms.TextBox txtsearch;
     }
 }
