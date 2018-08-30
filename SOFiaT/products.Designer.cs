@@ -47,6 +47,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtsupplier = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtunid = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnact = new System.Windows.Forms.Button();
             this.rbtncode = new System.Windows.Forms.RadioButton();
@@ -54,8 +56,6 @@
             this.rbtnsupplier = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtsearch = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtunid = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,7 +80,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -299,6 +299,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del producto";
             // 
+            // txtunid
+            // 
+            this.txtunid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtunid.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtunid.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.txtunid.Location = new System.Drawing.Point(303, 156);
+            this.txtunid.Name = "txtunid";
+            this.txtunid.Size = new System.Drawing.Size(97, 23);
+            this.txtunid.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label8.Location = new System.Drawing.Point(250, 161);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 14);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Unidad:";
+            // 
             // btncancel
             // 
             this.btncancel.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -389,28 +411,6 @@
             this.txtsearch.Size = new System.Drawing.Size(302, 20);
             this.txtsearch.TabIndex = 24;
             this.txtsearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label8.Location = new System.Drawing.Point(250, 161);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 14);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Unidad:";
-            // 
-            // txtunid
-            // 
-            this.txtunid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtunid.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtunid.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtunid.Location = new System.Drawing.Point(303, 156);
-            this.txtunid.Name = "txtunid";
-            this.txtunid.Size = new System.Drawing.Size(97, 23);
-            this.txtunid.TabIndex = 19;
             // 
             // products
             // 

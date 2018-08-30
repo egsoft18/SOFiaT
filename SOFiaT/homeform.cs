@@ -25,12 +25,16 @@ namespace SOFiaT
 
         private void homeform_Activated(object sender, EventArgs e)
         {
+            label7.Refresh();
+            label7.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+            label7.Refresh();
         }
 
         private void homeform_Load(object sender, EventArgs e)
         {
             string query = "select top 1 [idlogin],[user],[usertype],[[date] from [actualuser] order by idlogin desc";
             c.fill_txt(txtactualuser, query, "user");
+           
             //string query1 = "select usertype from userpass"
             //c.fill_txt(txtprivileges, query, "usertype");
         }
@@ -99,6 +103,27 @@ namespace SOFiaT
         private void btninvoicerec_Click(object sender, EventArgs e)
         {
             openfrm(new entryinvoice());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openfrm(new inventory());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label7.Refresh();
+            label7.Text = DateTime.Now.Hour.ToString("D2") + ":" + DateTime.Now.Minute.ToString("D2") + ":" + DateTime.Now.Second.ToString("D2");
+        }
+
+        private void verticalmenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

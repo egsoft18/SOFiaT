@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homeform));
             this.verticalmenu = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -59,6 +60,8 @@
             this.txtprivileges = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtactualuser = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label7 = new System.Windows.Forms.Label();
             this.verticalmenu.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -71,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnhide)).BeginInit();
             this.container.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // verticalmenu
@@ -86,6 +88,7 @@
             this.verticalmenu.Name = "verticalmenu";
             this.verticalmenu.Size = new System.Drawing.Size(200, 650);
             this.verticalmenu.TabIndex = 0;
+            this.verticalmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.verticalmenu_Paint);
             // 
             // groupBox4
             // 
@@ -93,7 +96,7 @@
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Location = new System.Drawing.Point(0, 525);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(203, 91);
+            this.groupBox4.Size = new System.Drawing.Size(203, 68);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             // 
@@ -269,6 +272,7 @@
             this.button1.Text = "Inventario";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btninvoicerec
             // 
@@ -315,7 +319,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btnmin);
+            this.panel1.Controls.Add(this.txtprivileges);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.txtactualuser);
             this.panel1.Controls.Add(this.btnrest);
             this.panel1.Controls.Add(this.btnmax);
             this.panel1.Controls.Add(this.btnclose);
@@ -325,6 +334,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1100, 50);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // btnmin
@@ -402,10 +412,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txtprivileges);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txtactualuser);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 580);
             this.panel2.Name = "panel2";
@@ -414,8 +420,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(937, 3);
+            this.label6.Location = new System.Drawing.Point(925, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 3;
@@ -423,16 +430,18 @@
             // 
             // txtprivileges
             // 
+            this.txtprivileges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtprivileges.Enabled = false;
-            this.txtprivileges.Location = new System.Drawing.Point(1000, 0);
+            this.txtprivileges.Location = new System.Drawing.Point(988, 24);
             this.txtprivileges.Name = "txtprivileges";
             this.txtprivileges.Size = new System.Drawing.Size(100, 20);
             this.txtprivileges.TabIndex = 2;
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(779, 3);
+            this.label5.Location = new System.Drawing.Point(767, 27);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 1;
@@ -440,12 +449,27 @@
             // 
             // txtactualuser
             // 
+            this.txtactualuser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtactualuser.Enabled = false;
             this.txtactualuser.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtactualuser.Location = new System.Drawing.Point(831, 0);
+            this.txtactualuser.Location = new System.Drawing.Point(819, 24);
             this.txtactualuser.Name = "txtactualuser";
             this.txtactualuser.Size = new System.Drawing.Size(100, 20);
             this.txtactualuser.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(331, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "label7";
             // 
             // homeform
             // 
@@ -472,14 +496,13 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnhide)).EndInit();
             this.container.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -516,5 +539,7 @@
         private System.Windows.Forms.TextBox txtprivileges;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Panel container;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Timer timer1;
     }
 }

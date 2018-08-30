@@ -39,5 +39,17 @@ namespace SOFiaT
                 c.load_dgv(dataGridView1, query);
             }
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            inventoryproduct frm = new inventoryproduct();
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            this.Controls.Add(frm);
+            this.Tag = frm;
+            frm.BringToFront();
+            frm.txtidproduct.Text = dataGridView1.Rows[e.RowIndex].Cells["IDProducto"].Value.ToString();
+            frm.Show();
+        }
     }
 }
