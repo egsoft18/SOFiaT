@@ -49,19 +49,19 @@
             this.btnproducts = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnmin = new System.Windows.Forms.PictureBox();
+            this.txtprivileges = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtactualuser = new System.Windows.Forms.TextBox();
             this.btnrest = new System.Windows.Forms.PictureBox();
             this.btnmax = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.PictureBox();
             this.btnhide = new System.Windows.Forms.PictureBox();
             this.container = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtprivileges = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtactualuser = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label7 = new System.Windows.Forms.Label();
             this.verticalmenu.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -218,6 +218,7 @@
             this.btnbill.Text = "Facturar";
             this.btnbill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnbill.UseVisualStyleBackColor = true;
+            this.btnbill.Click += new System.EventHandler(this.btnbill_Click);
             // 
             // label2
             // 
@@ -337,6 +338,25 @@
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(331, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "label7";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(925, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Privilegios:";
+            // 
             // btnmin
             // 
             this.btnmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -349,6 +369,35 @@
             this.btnmin.TabIndex = 4;
             this.btnmin.TabStop = false;
             this.btnmin.Click += new System.EventHandler(this.btnmin_Click);
+            // 
+            // txtprivileges
+            // 
+            this.txtprivileges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtprivileges.Enabled = false;
+            this.txtprivileges.Location = new System.Drawing.Point(988, 24);
+            this.txtprivileges.Name = "txtprivileges";
+            this.txtprivileges.Size = new System.Drawing.Size(100, 20);
+            this.txtprivileges.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(767, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Usuario:";
+            // 
+            // txtactualuser
+            // 
+            this.txtactualuser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtactualuser.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.txtactualuser.Location = new System.Drawing.Point(819, 24);
+            this.txtactualuser.Name = "txtactualuser";
+            this.txtactualuser.ReadOnly = true;
+            this.txtactualuser.Size = new System.Drawing.Size(100, 20);
+            this.txtactualuser.TabIndex = 0;
             // 
             // btnrest
             // 
@@ -418,58 +467,10 @@
             this.panel2.Size = new System.Drawing.Size(1100, 20);
             this.panel2.TabIndex = 0;
             // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(925, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Privilegios:";
-            // 
-            // txtprivileges
-            // 
-            this.txtprivileges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtprivileges.Enabled = false;
-            this.txtprivileges.Location = new System.Drawing.Point(988, 24);
-            this.txtprivileges.Name = "txtprivileges";
-            this.txtprivileges.Size = new System.Drawing.Size(100, 20);
-            this.txtprivileges.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(767, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Usuario:";
-            // 
-            // txtactualuser
-            // 
-            this.txtactualuser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtactualuser.Enabled = false;
-            this.txtactualuser.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtactualuser.Location = new System.Drawing.Point(819, 24);
-            this.txtactualuser.Name = "txtactualuser";
-            this.txtactualuser.Size = new System.Drawing.Size(100, 20);
-            this.txtactualuser.TabIndex = 0;
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(331, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "label7";
             // 
             // homeform
             // 
@@ -533,7 +534,6 @@
         private System.Windows.Forms.Button btncxc;
         private System.Windows.Forms.Button btnbill;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtactualuser;
         private System.Windows.Forms.Button btnexpenses;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtprivileges;
@@ -541,5 +541,6 @@
         public System.Windows.Forms.Panel container;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.TextBox txtactualuser;
     }
 }

@@ -125,5 +125,10 @@ namespace SOFiaT
         {
 
         }
+
+        private void btnbill_Click(object sender, EventArgs e)
+        {
+            openfrm(new checkin());
+        }
     }
 }
