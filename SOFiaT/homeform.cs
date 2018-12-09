@@ -34,9 +34,6 @@ namespace SOFiaT
         {
             string query = "select top 1 [idlogin],[user],[usertype],[[date] from [actualuser] order by idlogin desc";
             c.fill_txt(txtactualuser, query, "user");
-           
-            //string query1 = "select usertype from userpass"
-            //c.fill_txt(txtprivileges, query, "usertype");
         }
         private void btnhide_Click(object sender, EventArgs e)
         {
@@ -129,6 +126,11 @@ namespace SOFiaT
         private void btnbill_Click(object sender, EventArgs e)
         {
             openfrm(new checkin());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openfrm(new suppliers());
         }
     }
 }

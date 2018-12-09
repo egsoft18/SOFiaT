@@ -207,6 +207,7 @@
             // 
             // txttotal
             // 
+            this.txttotal.Enabled = false;
             this.txttotal.Location = new System.Drawing.Point(428, 17);
             this.txttotal.Name = "txttotal";
             this.txttotal.Size = new System.Drawing.Size(114, 20);
@@ -227,6 +228,8 @@
             this.txtdiscount.Name = "txtdiscount";
             this.txtdiscount.Size = new System.Drawing.Size(114, 20);
             this.txtdiscount.TabIndex = 21;
+            this.txtdiscount.TextChanged += new System.EventHandler(this.txtdiscount_TextChanged);
+            this.txtdiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdiscount_KeyPress);
             // 
             // label6
             // 
@@ -239,6 +242,7 @@
             // 
             // txtsubtotal
             // 
+            this.txtsubtotal.Enabled = false;
             this.txtsubtotal.Location = new System.Drawing.Point(59, 17);
             this.txtsubtotal.Name = "txtsubtotal";
             this.txtsubtotal.Size = new System.Drawing.Size(114, 20);

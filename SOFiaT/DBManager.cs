@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
-
+using System.IO;
+using System.Drawing;
 
 namespace SOFiaT
 {
@@ -16,7 +17,7 @@ namespace SOFiaT
         //public SqlConnection cnx = new SqlConnection();
 
         public string valor = "";
-        public string actuser = "";
+        //public string actuser;
 
         SqlConnection cnx;
         SqlCommand cmd;
@@ -85,7 +86,7 @@ namespace SOFiaT
                 else
                 {
                     valor = "si";
-                    actuser = user;
+                    //actuser = user;
                     //MessageBox.Show("Bienvenido a SysPandemic " + actuser);
                     //Homeform frm = new Homeform();
                     //login lfrm = new login();
@@ -116,6 +117,7 @@ namespace SOFiaT
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo agregar la infromacion. La causa: " + ex.Message);
+                //valor = "no";
             }
         }
         public void load_dgv(DataGridView dgv, string query)
@@ -142,7 +144,7 @@ namespace SOFiaT
                 {
                     cb.Items.Add(dr[item].ToString());
                 }
-                cb.SelectedIndex = 0;
+                //cb.SelectedIndex = 0;
                 dr.Close();
             }
             catch (Exception ex)
@@ -277,6 +279,27 @@ namespace SOFiaT
                 MessageBox.Show(ex.Message, "Error");
 
             }
+
+        }
+        public void fill_dtp(DateTimePicker txt, string query, string condition)
+        {
+            try
+            {
+
+                SqlCommand insertion = new SqlCommand(query, cnx);
+                SqlDataReader leer = insertion.ExecuteReader();
+                if (leer.Read() == true)
+                {
+                    string text = Convert.ToString(leer[condition]);
+                    txt.Text = text;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+            }
         }
         public void fill_diag(string query, ComboBox tmed_cb, TextBox tmedcom_txt, ComboBox mica_cb, TextBox micacom_txt, ComboBox ps_cb, ComboBox diab_cb, ComboBox hep_cb, TextBox hepcom_txt, ComboBox pr_cb, ComboBox pe_cb, TextBox pecom_txt, ComboBox pa_cb, TextBox pacom_txt, ComboBox hemo_cb, ComboBox aler_cb, TextBox alercom_txt)
         {
@@ -336,6 +359,30 @@ namespace SOFiaT
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo validar; " + ex.Message);
+            }
+        }
+        public void fill_picture(PictureBox ph, string query, string table, string column)
+        {
+            try
+            {
+
+                SqlCommand insertion = new SqlCommand(query, cnx);
+                SqlDataAdapter dp = new SqlDataAdapter(insertion);
+                DataSet ds = new DataSet("products");
+
+                byte[] misdatos = new byte[0];
+
+                dp.Fill(ds, "products");
+
+                DataRow myrow = ds.Tables["products"].Rows[0];
+                misdatos = (byte[])myrow["photo"];
+                MemoryStream ms = new MemoryStream(misdatos);
+                ph.Image = Bitmap.FromStream(ms);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo cargar la imagen. La causa: " + ex.Message);
             }
         }
 

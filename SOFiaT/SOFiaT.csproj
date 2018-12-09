@@ -127,6 +127,12 @@
     <Compile Include="reportview1.Designer.cs">
       <DependentUpon>reportview1.cs</DependentUpon>
     </Compile>
+    <Compile Include="suppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suppliers.Designer.cs">
+      <DependentUpon>suppliers.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="addproduct.resx">
       <DependentUpon>addproduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +168,9 @@
     </Compile>
     <EmbeddedResource Include="reportview1.resx">
       <DependentUpon>reportview1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="suppliers.resx">
+      <DependentUpon>suppliers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

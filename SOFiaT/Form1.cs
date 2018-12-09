@@ -13,9 +13,12 @@ namespace SOFiaT
 {
     public partial class login_frm : Form
     {
+
+        public string actual;
         public login_frm()
         {
             InitializeComponent();
+            
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -110,13 +113,16 @@ namespace SOFiaT
             //if (c.valor == "si")
             //{
             //    string query = "insert into [actualuser]([user]) values ('" + usu + "')";
+            //    //actual = usu;
             //    c.command3(query);
             //    txtpass.Clear();
             //    this.Hide();
             //    homeform frm = new homeform();
             //    frm.Show();
-
+            //    c.valor = "";
             //}
+
+
             this.Hide();
             homeform frm = new homeform();
             frm.Show();

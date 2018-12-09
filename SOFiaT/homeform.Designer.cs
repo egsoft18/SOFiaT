@@ -62,6 +62,7 @@
             this.container = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.verticalmenu.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -183,9 +184,9 @@
             this.groupBox2.Controls.Add(this.btncxc);
             this.groupBox2.Controls.Add(this.btnbill);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(0, 229);
+            this.groupBox2.Location = new System.Drawing.Point(0, 257);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(203, 142);
+            this.groupBox2.Size = new System.Drawing.Size(203, 114);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
@@ -233,6 +234,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btncxp);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btninvoicerec);
@@ -240,7 +242,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(0, 81);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(203, 142);
+            this.groupBox1.Size = new System.Drawing.Size(203, 170);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -251,7 +253,7 @@
             this.btncxp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncxp.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncxp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btncxp.Location = new System.Drawing.Point(114, 113);
+            this.btncxp.Location = new System.Drawing.Point(111, 141);
             this.btncxp.Name = "btncxp";
             this.btncxp.Size = new System.Drawing.Size(86, 23);
             this.btncxp.TabIndex = 3;
@@ -266,7 +268,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(114, 84);
+            this.button1.Location = new System.Drawing.Point(114, 112);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 23);
             this.button1.TabIndex = 2;
@@ -282,7 +284,7 @@
             this.btninvoicerec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btninvoicerec.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btninvoicerec.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btninvoicerec.Location = new System.Drawing.Point(87, 55);
+            this.btninvoicerec.Location = new System.Drawing.Point(87, 83);
             this.btninvoicerec.Name = "btninvoicerec";
             this.btninvoicerec.Size = new System.Drawing.Size(113, 23);
             this.btninvoicerec.TabIndex = 1;
@@ -395,7 +397,6 @@
             this.txtactualuser.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtactualuser.Location = new System.Drawing.Point(819, 24);
             this.txtactualuser.Name = "txtactualuser";
-            this.txtactualuser.ReadOnly = true;
             this.txtactualuser.Size = new System.Drawing.Size(100, 20);
             this.txtactualuser.TabIndex = 0;
             // 
@@ -472,6 +473,22 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Location = new System.Drawing.Point(87, 55);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 30);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Sumplidores";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // homeform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,5 +559,6 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.TextBox txtactualuser;
+        public System.Windows.Forms.Button button2;
     }
 }
