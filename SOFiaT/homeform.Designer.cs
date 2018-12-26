@@ -43,6 +43,7 @@
             this.btnbill = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.btncxp = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btninvoicerec = new System.Windows.Forms.Button();
@@ -62,7 +63,7 @@
             this.container = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnrnc = new System.Windows.Forms.Button();
             this.verticalmenu.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -93,11 +94,12 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnrnc);
             this.groupBox4.Controls.Add(this.btnexpenses);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Location = new System.Drawing.Point(0, 525);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(203, 68);
+            this.groupBox4.Size = new System.Drawing.Size(203, 113);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             // 
@@ -152,6 +154,7 @@
             this.btnstatus.Text = "Estado Resultado";
             this.btnstatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnstatus.UseVisualStyleBackColor = true;
+            this.btnstatus.Click += new System.EventHandler(this.btnstatus_Click);
             // 
             // btnsales
             // 
@@ -167,6 +170,7 @@
             this.btnsales.Text = "Ventas";
             this.btnsales.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnsales.UseVisualStyleBackColor = true;
+            this.btnsales.Click += new System.EventHandler(this.btnsales_Click);
             // 
             // label3
             // 
@@ -245,6 +249,22 @@
             this.groupBox1.Size = new System.Drawing.Size(203, 170);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Location = new System.Drawing.Point(87, 55);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 30);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Sumplidores";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btncxp
             // 
@@ -473,21 +493,21 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button2
+            // btnrnc
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(87, 55);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 30);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Sumplidores";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnrnc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrnc.FlatAppearance.BorderSize = 0;
+            this.btnrnc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrnc.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrnc.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnrnc.Location = new System.Drawing.Point(34, 52);
+            this.btnrnc.Name = "btnrnc";
+            this.btnrnc.Size = new System.Drawing.Size(163, 32);
+            this.btnrnc.TabIndex = 9;
+            this.btnrnc.Text = "Importar RNC";
+            this.btnrnc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnrnc.UseVisualStyleBackColor = true;
+            this.btnrnc.Click += new System.EventHandler(this.btnrnc_Click);
             // 
             // homeform
             // 
@@ -560,5 +580,6 @@
         public System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.TextBox txtactualuser;
         public System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnrnc;
     }
 }

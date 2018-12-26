@@ -132,5 +132,20 @@ namespace SOFiaT
         {
             openfrm(new suppliers());
         }
+
+        private void btnstatus_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnsales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnrnc_Click(object sender, EventArgs e)
+        {
+            openfrm(new RNC());
+        }
     }
 }

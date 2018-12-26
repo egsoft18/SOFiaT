@@ -127,6 +127,12 @@
     <Compile Include="reportview1.Designer.cs">
       <DependentUpon>reportview1.cs</DependentUpon>
     </Compile>
+    <Compile Include="RNC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RNC.Designer.cs">
+      <DependentUpon>RNC.cs</DependentUpon>
+    </Compile>
     <Compile Include="suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </Compile>
     <EmbeddedResource Include="reportview1.resx">
       <DependentUpon>reportview1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RNC.resx">
+      <DependentUpon>RNC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="suppliers.resx">
       <DependentUpon>suppliers.cs</DependentUpon>
