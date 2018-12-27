@@ -20,7 +20,7 @@ namespace SOFiaT
 
         private void suppliers_Load(object sender, EventArgs e)
         {
-            string querry = "SELECT TOP 1000 [idsupplier], [suppliername],[contactname],[contactphone],[address],[city],[state],[country],[postalcode],[phonenumber],[email],[coment] FROM [SOFiaT].[dbo].[suppliers]";
+            string querry = "SELECT [idsupplier] as CODE, [suppliername] as Nombre,[contactname] as Contacto,[contactphone] as 'Tel Cont.',[address] as Direccion,[city] as Ciudad,[state] as 'Procvincia/Estado',[country] as Pais,[postalcode] as 'Codigo Postal',[phonenumber] as Tel,[email] as Email,[coment] as Comentario FROM [SOFiaT].[dbo].[suppliers]";
             c.load_dgv(dataGridView1, querry);
 
             gbsupplierdata.Hide();
@@ -29,8 +29,11 @@ namespace SOFiaT
 
         private void nuevoSuplidorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string query = "SELECT idproduct as Code, [name] as Producto, [description] as Descripcion, [unid] as Unidad, [saleprice] as 'Precio de venta', s.suppliername as Suplidor FROM [products] as p, suppliers as s where p.idsupplier = s.idsupplier and [supplier] = '" + txtidsupplier.Text + "'";
+            c.load_dgv(dgvsuppliersproducts, query);
             gbsupplierdata.Show();
             gbsuppliersv.Hide();
+            btnsaction.Text = "Guardar";
 
         }
 
@@ -57,6 +60,48 @@ namespace SOFiaT
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbsupplierdata_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void visorDeSuplidoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string querry = "SELECT [idsupplier] as CODE, [suppliername] as Nombre,[contactname] as Contacto,[contactphone] as 'Tel Cont.',[address] as Direccion,[city] as Ciudad,[state] as 'Procvincia/Estado',[country] as Pais,[postalcode] as 'Codigo Postal',[phonenumber] as Tel,[email] as Email,[coment] as Comentario FROM [SOFiaT].[dbo].[suppliers]";
+            c.load_dgv(dataGridView1, querry);
+            gbsuppliersv.Show();
+            gbsupplierdata.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string querry = "SELECT [idsupplier], [suppliername],[contactname],[contactphone],[address],[city],[state],[country],[postalcode],[phonenumber],[email],[coment] FROM [SOFiaT].[dbo].[suppliers] where [idsupplier] = '" + dataGridView1.Rows[e.RowIndex].Cells["CODE"].Value.ToString() + "'";
+                c.fill_txt(txtidsupplier, querry, "idsupplier");
+
+
+
+                gbsuppliersv.Hide();
+                gbsupplierdata.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
