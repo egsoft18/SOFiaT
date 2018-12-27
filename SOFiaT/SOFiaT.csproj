@@ -133,6 +133,12 @@
     <Compile Include="RNC.Designer.cs">
       <DependentUpon>RNC.cs</DependentUpon>
     </Compile>
+    <Compile Include="supplierdata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supplierdata.Designer.cs">
+      <DependentUpon>supplierdata.cs</DependentUpon>
+    </Compile>
     <Compile Include="suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RNC.resx">
       <DependentUpon>RNC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplierdata.resx">
+      <DependentUpon>supplierdata.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="suppliers.resx">
       <DependentUpon>suppliers.cs</DependentUpon>

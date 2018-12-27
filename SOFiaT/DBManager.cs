@@ -109,7 +109,7 @@ namespace SOFiaT
 
                 if (insertion.ExecuteNonQuery() > 0)
                 {
-                    MessageBox.Show("Se ha realizado la accion", "Hecho");
+                    MessageBox.Show("Se ha realizado la accion", "Hecho", MessageBoxButtons.OK,  MessageBoxIcon.Information);
                     valor = "si";
 
                 }

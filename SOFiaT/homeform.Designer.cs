@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homeform));
             this.verticalmenu = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnrnc = new System.Windows.Forms.Button();
             this.btnexpenses = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -63,7 +64,6 @@
             this.container = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnrnc = new System.Windows.Forms.Button();
             this.verticalmenu.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -102,6 +102,22 @@
             this.groupBox4.Size = new System.Drawing.Size(203, 113);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
+            // 
+            // btnrnc
+            // 
+            this.btnrnc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrnc.FlatAppearance.BorderSize = 0;
+            this.btnrnc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrnc.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrnc.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnrnc.Location = new System.Drawing.Point(34, 52);
+            this.btnrnc.Name = "btnrnc";
+            this.btnrnc.Size = new System.Drawing.Size(163, 32);
+            this.btnrnc.TabIndex = 9;
+            this.btnrnc.Text = "Importar RNC";
+            this.btnrnc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnrnc.UseVisualStyleBackColor = true;
+            this.btnrnc.Click += new System.EventHandler(this.btnrnc_Click);
             // 
             // btnexpenses
             // 
@@ -261,7 +277,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 30);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Sumplidores";
+            this.button2.Text = "Suplidores";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -492,22 +508,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnrnc
-            // 
-            this.btnrnc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrnc.FlatAppearance.BorderSize = 0;
-            this.btnrnc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrnc.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrnc.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnrnc.Location = new System.Drawing.Point(34, 52);
-            this.btnrnc.Name = "btnrnc";
-            this.btnrnc.Size = new System.Drawing.Size(163, 32);
-            this.btnrnc.TabIndex = 9;
-            this.btnrnc.Text = "Importar RNC";
-            this.btnrnc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnrnc.UseVisualStyleBackColor = true;
-            this.btnrnc.Click += new System.EventHandler(this.btnrnc_Click);
             // 
             // homeform
             // 
