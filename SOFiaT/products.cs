@@ -32,6 +32,7 @@ namespace SOFiaT
             c.load_dgv(dataGridView1, query);
             rbtncode.Checked = true;
             btnact.Text = "Agregar";
+            //txtidsupplier.Hide();
 
             query = "select suppliername from [suppliers]";
             c.fill_CB(cbsupplier, query, "suppliername");
@@ -66,31 +67,17 @@ namespace SOFiaT
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try {
-                string query = "select idproduct, name, [description], cost, saleprice, supplier, unid, photo, supplier from [products] where idproduct = '" + dataGridView1.Rows[e.RowIndex].Cells["Code"].Value.ToString() + "'";
+                string query = "select idproduct, name, [description], cost, saleprice, supplier, unid, photo, supplier, supplierref from [products] where idproduct = '" + dataGridView1.Rows[e.RowIndex].Cells["Code"].Value.ToString() + "'";
                 c.fill_txt(txtcode, query, "idproduct");
                 txtcode.Enabled = false;
                 btnact.Text = "Actualizar";
                 c.fill_txt(txtnameprod, query, "name");
                 c.fill_txt(txtdescprod, query, "description");
-                //c.fill_txt(txtcost, query, "cost");
+                c.fill_txt(txtcost, query, "cost");
                 c.fill_txt(txtsaleprice, query, "saleprice");
-                //c.fill_txt(txtsupplier, query, "supplier");
+                c.fill_txt(txtsupplierref, query, "supplierref");
                 c.fill_txt(txtunid, query, "unid");
                 cbsupplier.Text = dataGridView1.Rows[e.RowIndex].Cells["Suplidor"].Value.ToString();
-
-
-
-                //c.fill_txt(txtshowimage, query, "photo");
-                //c.fill_picture(pbphoto, query, "[products]", "photo");
-
-
-
-                //frm.TopLevel = false;
-                //frm.Dock = DockStyle.Fill;
-                //this.Controls.Add(frm);
-                //this.Tag = frm;
-                //frm.BringToFront();
-                //frm.Show(); 
             }
             catch
             {
@@ -117,7 +104,7 @@ namespace SOFiaT
 
         private void btnact_Click(object sender, EventArgs e)
         {
-            if (!(txtcode.Text == "" || txtnameprod.Text == "" || txtsaleprice.Text == "" || txtunid.Text == "" || cbsupplier.Text == ""))
+            if (!(txtcode.Text == "" || txtnameprod.Text == "" || txtsaleprice.Text == "" || txtunid.Text == "" || cbsupplier.Text == "" || txtcost.Text =="" ))
             {
                 if (btnact.Text == "Agregar")
             {
@@ -136,7 +123,7 @@ namespace SOFiaT
                         string supplierquery = "select idsupplier from suppliers where suppliername = '" + cbsupplier.Text + "'";
                         c.fill_txt(txtidsupplier, supplierquery, "idsupplier");
 
-                        string query2 = "insert into products(idproduct, name, description, saleprice, idsupplier, unid, photo) values('" + txtcode.Text + "', '" + txtnameprod.Text + "', '" + txtdescprod.Text + "', '" + txtsaleprice.Text + "', '" + txtidsupplier.Text + "', '" + txtunid.Text + "', '"+ binData +"')";
+                        string query2 = "insert into products(idproduct, name, description, saleprice, idsupplier, unid, photo, cost, supplierref) values('" + txtcode.Text + "', '" + txtnameprod.Text + "', '" + txtdescprod.Text + "', '" + txtsaleprice.Text + "', '" + txtidsupplier.Text + "', '" + txtunid.Text + "', '" + binData + "', '" + txtcost.Text + "', '" + txtsupplierref.Text + "')";
                         c.command(query2);
                         //c.valor = "";
                         if (c.valor == "si")
@@ -149,9 +136,9 @@ namespace SOFiaT
                             btnact.Text = "Agregar";
                             txtnameprod.Clear();
                             txtdescprod.Clear();
-                            //txtcost.Clear();
+                            txtcost.Clear();
                             txtsaleprice.Clear();
-                            //txtsupplier.Clear();
+                            txtsupplierref.Clear();
                             txtphoto.Clear();
                             pbphoto.Image.Dispose();
                             txtunid.Clear();
@@ -161,7 +148,7 @@ namespace SOFiaT
                     }
                     else if (c.valor == "si")
                     {
-                        MessageBox.Show("Ya existe un producto con este codigo", "Error al guardar");
+                        MessageBox.Show("Ya existe un producto con este codigo", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         c.valor = "";
                     }
                 }
@@ -170,7 +157,7 @@ namespace SOFiaT
                     string supplierquery = "select idsupplier from suppliers where suppliername = '" + cbsupplier.Text + "'";
                     c.fill_txt(txtidsupplier, supplierquery, "idsupplier");
 
-                    string query = "update [products] set name = '" + txtnameprod.Text + "', description = '" + txtdescprod.Text + "',  saleprice = '" + txtsaleprice.Text + "', idsupplier = '" + txtidsupplier.Text + "', unid = '" + txtunid.Text + "' where [idproduct] = '" + txtcode.Text + "'";
+                    string query = "update [products] set name = '" + txtnameprod.Text + "', description = '" + txtdescprod.Text + "',  saleprice = '" + txtsaleprice.Text + "', idsupplier = '" + txtidsupplier.Text + "', unid = '" + txtunid.Text + "', cost = '" + txtcost.Text + "', supplierref = '" + txtsupplierref.Text + "' where [idproduct] = '" + txtcode.Text + "'";
                     c.command(query);
                     if (c.valor == "si")
                     {
@@ -182,25 +169,27 @@ namespace SOFiaT
                         btnact.Text = "Agregar";
                         txtnameprod.Clear();
                         txtdescprod.Clear();
-                        //txtcost.Clear();
+                        txtcost.Clear();
                         txtsaleprice.Clear();
-                        //txtsupplier.Clear();
+                        txtsupplierref.Clear();
+                        txtidsupplier.Clear();
                         txtphoto.Clear();
+                        txtunid.Clear();
+                        c.valor = "";
+                        cbsupplier.Text = "";
                         try
                         {
                             pbphoto.Image.Dispose();
                         }
                         catch { }
-                        txtunid.Clear();
-                        c.valor = "";
-                        cbsupplier.Text = "";
+                        
                     }
 
                 }
             }
             else
             {
-                MessageBox.Show("No se ha procedido la informacion por falta de datos.");
+                MessageBox.Show("No se ha procedido la informacion por falta de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -275,6 +264,11 @@ namespace SOFiaT
         private void dataGridView1_CellBorderStyleChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
